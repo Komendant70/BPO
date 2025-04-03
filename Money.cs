@@ -8,7 +8,7 @@ public interface IMoneyOperations
     Money Subtract(Money other);
     Money Divide(double divisor);
     Money Multiply(double multiplier);
-    bool Compare(Money other);
+    int Compare(Money other);
 }
 
 // Абстрактный базовый класс для денежных единиц
@@ -97,9 +97,23 @@ public class Money : Currency, IMoneyOperations
     }
 
     // Сравнение
-    public bool Compare(Money other)
+    public int Compare(Money other)
     {
-        return Rubles == other.Rubles && Kopecks == other.Kopecks;
+        if (Rubles > other.Rubles || (Rubles == other.Rubles && Kopecks > other.Kopecks))
+        {
+            Console.WriteLine($"Первая сумма ({Display()}) больше второй ({other.Display()})");
+            return 1;
+        }
+        else if (Rubles < other.Rubles || (Rubles == other.Rubles && Kopecks < other.Kopecks))
+        {
+            Console.WriteLine($"Вторая сумма ({other.Display()}) больше первой ({Display()})");
+            return -1;
+        }
+        else
+        {
+            Console.WriteLine($"Суммы равны: {Display()} = {other.Display()}");
+            return 0;
+        }
     }
 
     // Деструктор (финализатор)

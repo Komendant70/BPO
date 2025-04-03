@@ -34,7 +34,8 @@ class Program
             Console.WriteLine($"Деление сумм: {money1.Divide(money2):F2}");
             Console.WriteLine($"Деление первой суммы на 2: {money1.Divide(2).Display()}");
             Console.WriteLine($"Умножение первой суммы на 1.5: {money1.Multiply(1.5).Display()}");
-            Console.WriteLine($"Сравнение сумм: {money1.Compare(money2)}");
+
+            money1.Compare(money2);
         }
         catch (Exception ex)
         {

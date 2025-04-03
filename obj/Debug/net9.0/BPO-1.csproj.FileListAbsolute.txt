@@ -1,0 +1,15 @@
+C:\Users\Redmi\BPO-1\bin\Debug\net9.0\BPO-1.exe
+C:\Users\Redmi\BPO-1\bin\Debug\net9.0\BPO-1.deps.json
+C:\Users\Redmi\BPO-1\bin\Debug\net9.0\BPO-1.runtimeconfig.json
+C:\Users\Redmi\BPO-1\bin\Debug\net9.0\BPO-1.dll
+C:\Users\Redmi\BPO-1\bin\Debug\net9.0\BPO-1.pdb
+C:\Users\Redmi\BPO-1\obj\Debug\net9.0\BPO-1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Redmi\BPO-1\obj\Debug\net9.0\BPO-1.AssemblyInfoInputs.cache
+C:\Users\Redmi\BPO-1\obj\Debug\net9.0\BPO-1.AssemblyInfo.cs
+C:\Users\Redmi\BPO-1\obj\Debug\net9.0\BPO-1.csproj.CoreCompileInputs.cache
+C:\Users\Redmi\BPO-1\obj\Debug\net9.0\BPO-1.sourcelink.json
+C:\Users\Redmi\BPO-1\obj\Debug\net9.0\BPO-1.dll
+C:\Users\Redmi\BPO-1\obj\Debug\net9.0\refint\BPO-1.dll
+C:\Users\Redmi\BPO-1\obj\Debug\net9.0\BPO-1.pdb
+C:\Users\Redmi\BPO-1\obj\Debug\net9.0\BPO-1.genruntimeconfig.cache
+C:\Users\Redmi\BPO-1\obj\Debug\net9.0\ref\BPO-1.dll
