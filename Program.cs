@@ -1,2 +1,44 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Program.cs
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        try
+        {
+            // Ввод первой суммы
+            Console.WriteLine("Введите первую сумму:");
+            Console.Write("Рубли: ");
+            long rub1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Копейки: ");
+            int kop1 = Convert.ToInt32(Console.ReadLine());
+
+            // Ввод второй суммы
+            Console.WriteLine("\nВведите вторую сумму:");
+            Console.Write("Рубли: ");
+            long rub2 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Копейки: ");
+            int kop2 = Convert.ToInt32(Console.ReadLine());
+
+            // Создание объектов
+            Money money1 = new Money(rub1, kop1);
+            Money money2 = new Money(rub2, kop2);
+
+            // Демонстрация операций
+            Console.WriteLine("\nРезультаты операций:");
+            Console.WriteLine($"Первая сумма: {money1.Display()}");
+            Console.WriteLine($"Вторая сумма: {money2.Display()}");
+            Console.WriteLine($"Сложение: {money1.Add(money2).Display()}");
+            Console.WriteLine($"Вычитание: {money1.Subtract(money2).Display()}");
+            Console.WriteLine($"Деление сумм: {money1.Divide(money2):F2}");
+            Console.WriteLine($"Деление первой суммы на 2: {money1.Divide(2).Display()}");
+            Console.WriteLine($"Умножение первой суммы на 1.5: {money1.Multiply(1.5).Display()}");
+            Console.WriteLine($"Сравнение сумм: {money1.Compare(money2)}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Ошибка: {ex.Message}");
+        }
+    }
+}
