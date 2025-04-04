@@ -1,17 +1,15 @@
-// Money.cs
 using System;
 
-// Интерфейс для базовых операций с деньгами
-public interface IMoneyOperations
+public interface MoneyOperations
 {
-    Money Add(Money other);
-    Money Subtract(Money other);
-    Money Divide(double divisor);
-    Money Multiply(double multiplier);
-    int Compare(Money other);
+    Money Sum(Money other); // сложение
+    Money Subtract(Money other); // вычитание
+    Money Divide(double divisor); // деление
+    Money Multiply(double multiplier); // умножение
+    int Compare(Money other); // сравнение
 }
 
-// Абстрактный базовый класс для денежных единиц
+
 public abstract class Currency
 {
     protected long Rubles { get; set; }
@@ -24,8 +22,7 @@ public abstract class Currency
         Normalize();
     }
 
-    // Нормализация копеек (перевод избытка в рубли)
-    protected void Normalize()
+    private void Normalize()
     {
         if (Kopecks >= 100)
         {
@@ -42,26 +39,23 @@ public abstract class Currency
     public abstract string Display();
 }
 
-// Конкретная реализация класса Money
-public class Money : Currency, IMoneyOperations
+
+public class Money : Currency, MoneyOperations
 {
     public Money(long rubles, int kopecks) : base(rubles, kopecks) { }
 
-    // Вывод суммы в формате "рубли,копейки"
     public override string Display()
     {
         return $"{Rubles},{Kopecks:00}";
     }
 
-    // Сложение
-    public Money Add(Money other)
+    public Money Sum(Money other)
     {
         long newRubles = Rubles + other.Rubles;
         int newKopecks = Kopecks + other.Kopecks;
         return new Money(newRubles, newKopecks);
     }
 
-    // Вычитание
     public Money Subtract(Money other)
     {
         long newRubles = Rubles - other.Rubles;
@@ -80,7 +74,6 @@ public class Money : Currency, IMoneyOperations
     // Деление на дробное число
     public Money Divide(double divisor)
     {
-        if (divisor == 0) throw new DivideByZeroException();
         double total = (Rubles + Kopecks / 100.0) / divisor;
         long newRubles = (long)total;
         int newKopecks = (int)((total - newRubles) * 100);
@@ -116,9 +109,8 @@ public class Money : Currency, IMoneyOperations
         }
     }
 
-    // Деструктор (финализатор)
     ~Money()
     {
-        Console.WriteLine("Money object destroyed");
+        Console.WriteLine("Денег нет, но вы держитесь");
     }
 }
