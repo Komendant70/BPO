@@ -10,8 +10,9 @@ class Program
             Console.WriteLine("\nВыберите задание:");
             Console.WriteLine("1. Работа с денежными суммами (Money)");
             Console.WriteLine("2. Работа с товарами (Goods)");
-            Console.WriteLine("3. Выйти");
-            Console.WriteLine("4. Шахматные фигуры (Chess)");
+            Console.WriteLine("3. Шахматные фигуры (Chess)");
+            Console.WriteLine("4. Выйти");
+            
             Console.Write("Ваш выбор (1-4): ");
 
             string choice = Console.ReadLine();
@@ -27,12 +28,12 @@ class Program
                     break;
 
                 case "3":
-                    Console.WriteLine("Программа завершена");
-                    return;
-
-                case "4":
                     ChessTask();
                     break;
+                    
+                case "4":
+                    Console.WriteLine("Программа завершена");
+                    return;
 
                 default:
                     Console.WriteLine("Неверный выбор. Выберите число от 1 до 4");

@@ -1,4 +1,3 @@
-// Goods.cs
 using System;
 
 public class Goods
@@ -44,24 +43,20 @@ public class Goods
         Console.WriteLine($"Количество товара '{name}' уменьшено на {amount}. Новое количество: {quantity}");
     }
 
-    public decimal CalculateTotalCost()
+    public decimal TotalCost()
     {
         return price * quantity;
     }
 
     public string DisplayTotalCost()
     {
-        decimal totalCost = CalculateTotalCost();
+        decimal totalCost = TotalCost();
         return $"Общая стоимость товара '{name}': {totalCost:F2} руб.";
     }
 
     public override string ToString()
     {
-        return $"Товар: {name}\n" +
-               $"Дата оформления: {receiptDate:dd.MM.yyyy}\n" +
-               $"Цена за единицу: {price:F2} руб.\n" +
-               $"Количество: {quantity} шт.\n" +
-               $"Номер накладной: {invoiceNumber}\n" +
-               $"{DisplayTotalCost()}";
+        return $"Товар: {name}\n" + $"Дата оформления: {receiptDate:dd.MM.yyyy}\n" + $"Цена за единицу: {price:F2} руб.\n" +
+               $"Количество: {quantity} шт.\n" + $"Номер накладной: {invoiceNumber}\n" + $"{DisplayTotalCost()}";
     }
 }
